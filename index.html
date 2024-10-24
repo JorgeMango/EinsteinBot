@@ -12,6 +12,18 @@
                 //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["BotLanguageInterface"]);
             });
 
+            window.addEventListener("onEmbeddedMessagingReady", e => {
+                embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
+                 "_firstName": {
+                    "value": "Jane",
+                    "isEditableByEndUser": false
+                  },
+                  "LastName": {
+                    "value": "A2",
+                  }
+                });
+            });
+
 			function initEmbeddedMessaging() {
 				try {
 					console.log('hola');
