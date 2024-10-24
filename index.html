@@ -2,51 +2,23 @@
 	<body>
         <h1>HOLA</h1>
 		<script type='text/javascript'>
-            window.addEventListener("onEmbeddedMessagingReady", () => {
-                console.log("Received the onEmbeddedMessagingReady event…");
+            function initEmbeddedMessaging() {
+                try {
+                    embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
-                // Send data to Salesforce
-                embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"BotLanguageInterface" : "867-5309"});
-
-                // Remove any items from the previous list that you don't want to send
-                //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["BotLanguageInterface"]);
-            });
-
-            window.addEventListener("onEmbeddedMessagingReady", e => {
-                embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
-                 "_firstName": {
-                    "value": "Jane",
-                    "isEditableByEndUser": false
-                  },
-                  "LastName": {
-                    "value": "A2",
-                  }
-                });
-            });
-
-			function initEmbeddedMessaging() {
-				try {
-					console.log('hola');
-					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-					console.log('hola1');
-					embeddedservice_bootstrap.init(
-						'00D7Z0000004u9I',
-						'CyclicaMessagingEmbedded',
-						'https://enterprise-speed-2672--pre.sandbox.my.site.com/ESWCyclicaMessagingEmbedd1720903325802',
-						{
-							scrt2URL: 'https://enterprise-speed-2672--pre.sandbox.my.salesforce-scrt.com'
-						}
-					);
-					console.log('hola2');
-				} catch (err) {
-					console.error('Error loading Embedded Messaging: ', err);
-				}
-			};
-
-
-
-		</script>
-		<script type='text/javascript' src='https://enterprise-speed-2672--pre.sandbox.my.site.com/ESWCyclicaMessagingEmbedd1720903325802/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
+                    embeddedservice_bootstrap.init(
+                        '00D7Z0000004u9I',
+                        'GithubTestDeployment',
+                        'https://enterprise-speed-2672--pre.sandbox.my.site.com/ESWGithubTestDeployment1729772072374',
+                        {
+                            scrt2URL: 'https://enterprise-speed-2672--pre.sandbox.my.salesforce-scrt.com'
+                        }
+                    );
+                } catch (err) {
+                    console.error('Error loading Embedded Messaging: ', err);
+                }
+            };
+        </script>
+        <script type='text/javascript' src='https://enterprise-speed-2672--pre.sandbox.my.site.com/ESWGithubTestDeployment1729772072374/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 	</body>
 </html>
