@@ -1,12 +1,26 @@
 <html>
 	<body>
-		sheë2aas
+		sheë2aas2
 		<script type='text/javascript'>
             function initEmbeddedMessaging() {
                 try {
                     embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
                     console.log('embeddedservice_bootstrap.prechatAPI');
                     console.log(embeddedservice_bootstrap.prechatAPI);
+
+                    window.addEventListener("onEmbeddedMessagingReady", () => {
+                        console.log("Received the onEmbeddedMessagingReady event…");
+
+                        // Send data to Salesforce
+                        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"BotLanguageInterface" : "ennnn"});
+
+                        // Remove any items from the previous list that you don't want to send
+                        //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
+                        console.log('embeddedservice_bootstrap.prechatAPI2');
+                            console.log(embeddedservice_bootstrap.prechatAPI);
+                    });
+
+
                     embeddedservice_bootstrap.init(
                         '00D7Z0000004u9I',
                         'GithubTestDeployment2',
@@ -20,21 +34,6 @@
                 }
             };
         </script>
-        <script type='text/javascript'>
-			window.addEventListener("onEmbeddedMessagingReady", () => {
-                console.log("Received the onEmbeddedMessagingReady event…");
-
-                // Send data to Salesforce
-                embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"BotLanguageInterface" : "ennnn"});
-
-                // Remove any items from the previous list that you don't want to send
-                //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
-                console.log('embeddedservice_bootstrap.prechatAPI2');
-                    console.log(embeddedservice_bootstrap.prechatAPI);
-            });
-		</script>
-
         <script type='text/javascript' src='https://enterprise-speed-2672--pre.sandbox.my.site.com/ESWGithubTestDeployment21729782009410/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
 	</body>
 </html>
