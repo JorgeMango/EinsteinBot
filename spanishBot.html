@@ -4,18 +4,7 @@
 		<script type='text/javascript'>
             function initEmbeddedMessaging() {
                 try {
-                    window.addEventListener("onEmbeddedMessagingReady", () => {
-                        console.log("Received the onEmbeddedMessagingReady event…");
-                        // Send data to Salesforce
-                        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"BotLanguageInterface" : "es"});
-
-                        // Remove any items from the previous list that you don't want to send
-                        //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
-                        console.log('embeddedservice_bootstrap.prechatAPI2');
-                        console.log(embeddedservice_bootstrap.prechatAPI);
-                    });
-
-
+                    embeddedservice_bootstrap.settings.language ="es";
                     embeddedservice_bootstrap.init(
                         '00D7Z0000004u9I',
                         'GithubTestDeployment2',
@@ -28,6 +17,19 @@
                     console.error('Error loading Embedded Messaging: ', err);
                 }
             };
+        </script>
+
+        <script type='text/javascript'>
+            window.addEventListener("onEmbeddedMessagingReady", () => {
+                console.log("Received the onEmbeddedMessagingReady event…");
+                // Send data to Salesforce
+                embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"BotLanguageInterface" : "es"});
+
+                // Remove any items from the previous list that you don't want to send
+                //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
+                console.log('embeddedservice_bootstrap.prechatAPI2');
+                console.log(embeddedservice_bootstrap.prechatAPI);
+            });
         </script>
         <script type='text/javascript' src='https://enterprise-speed-2672--pre.sandbox.my.site.com/ESWGithubTestDeployment21729782009410/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 	</body>
