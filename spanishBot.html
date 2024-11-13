@@ -29,6 +29,19 @@
                 //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
                 console.log('embeddedservice_bootstrap.prechatAPI2');
                 console.log(embeddedservice_bootstrap.prechatAPI);
+
+                embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
+                    "_firstName": {
+                       "value": "Jane",
+                       "isEditableByEndUser": true
+                    },
+                    "First_Name": {
+                        "value": "Jane2",
+                        "isEditableByEndUser": true
+                    }
+                });
+                console.log('embeddedservice_bootstrap.prechatAPI');
+                console.log(embeddedservice_bootstrap.prechatAPI);
             });
         </script>
         <script type='text/javascript' src='https://enterprise-speed-2672--pre.sandbox.my.site.com/ESWGithubTestDeployment21729782009410/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
