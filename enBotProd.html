@@ -1,0 +1,24 @@
+<html>
+	<body>
+		English Bot PROD
+		<script type='text/javascript'>
+            function initEmbeddedMessaging() {
+                try {
+                    embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+                    embeddedservice_bootstrap.init(
+                        '00D06000001RhcT',
+                        'CyclicaMessaging',
+                        'https://enterprise-speed-2672.my.site.com/ESWCyclicaMessaging1734451761296',
+                        {
+                            scrt2URL: 'https://enterprise-speed-2672.my.salesforce-scrt.com'
+                        }
+                    );
+                } catch (err) {
+                    console.error('Error loading Embedded Messaging: ', err);
+                }
+            };
+        </script>
+        <script type='text/javascript' src='https://enterprise-speed-2672.my.site.com/ESWCyclicaMessaging1734451761296/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+	</body>
+</html>
