@@ -1,10 +1,9 @@
 <html>
 	<body>
-		English Bot PROD
 		<script type='text/javascript'>
             function initEmbeddedMessaging() {
                 try {
-                    //embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+                    //Aqui se especifica el lenguaje de la interfaz del bot (Start conversation, End Conversation, etc)
                     embeddedservice_bootstrap.settings.language = "en";
                     embeddedservice_bootstrap.init(
                         '00D06000001RhcT',
@@ -22,30 +21,25 @@
 
         <script type='text/javascript'>
             window.addEventListener("onEmbeddedMessagingReady", () => {
-                console.log("Received the onEmbeddedMessagingReady event…");
-                // Send data to Salesforce
+                //Aqui se especifica el lenguaje que debe emplear el bot para comunicarse con el cliente
                 embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"BotLanguageInterface" : "en"});
 
-                // Remove any items from the previous list that you don't want to send
-                //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
-                console.log('embeddedservice_bootstrap.prechatAPI2');
-                console.log(embeddedservice_bootstrap.prechatAPI);
-
+                //Estos son los campos que estaran visibles en el prechat. Rellenad los que sean necesarios con la informacion del cliente logado en la web
                 embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
                     "_firstName": {
-                       "value": "Jane",
-                       "isEditableByEndUser": true
+                       "value": "Pepito",
+                       "isEditableByEndUser": true //Esta propiedad indica si el usuario final puede editar el campo
                     },
                     "_lastName": {
-                        "value": "Jane2aaaaa",
+                        "value": "Grillo",
                         "isEditableByEndUser": false
                     },
                     "_email": {
-                        "value": "email@dot.com",
+                        "value": "Pepito@grillo.com",
                         "isEditableByEndUser": false
                     },
                     "Company": {
-                        "value": "QWERTY",
+                        "value": "Hiberus",
                         "isEditableByEndUser": false
                     },
                     "Mobile": {
@@ -53,10 +47,10 @@
                         "isEditableByEndUser": false
                     }
                 });
-                console.log('embeddedservice_bootstrap.prechatAPI');
-                console.log(embeddedservice_bootstrap.prechatAPI);
             });
         </script>
+
+        <!-- Esta linea de script, Salesforce indica que debe ir antes o lo mas proximo al tag del cierre del body </body> -->
         <script type='text/javascript' src='https://enterprise-speed-2672.my.site.com/ESWCyclicaMessaging1734451761296/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 	</body>
 </html>
